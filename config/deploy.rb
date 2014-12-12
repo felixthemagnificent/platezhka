@@ -1,12 +1,16 @@
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'payservice'
+set :repo_url, 'git@github.com:felixthemagnificent/platezhka.git'
+
+set :branch, 'master'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-# set :deploy_to, '/var/www/my_app'
+ set :deploy_to, '/rails/railsapp/payservice'
 # set :scm, :git
 
- set :format, :pretty
+set :nginx_server_name, "pay.rtsystems.ru"
+
+# set :format, :pretty
 # set :log_level, :debug
 # set :pty, true
 
@@ -22,7 +26,7 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      execute :touch, release_path.join('tmp/restart.txt')
+      # execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 

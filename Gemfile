@@ -22,7 +22,7 @@ gem 'unicorn-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
-  gem 'capistrano'
+  gem 'capistrano', '>= 3.2.0'
   gem 'capistrano-bundler'
   gem 'capistrano-nginx-unicorn'
   gem 'capistrano-rails'
