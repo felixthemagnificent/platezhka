@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ФИО:</strong>
+  <%= @payment.user.name %>
+</p>
+
+<p>
+  <strong>Тип платежа:</strong>
+  <%= Paymenttype.find(@payment.paymenttype_id).typename %>
+</p>
+
+<p>
+  <strong>За сколько:</strong>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <strong>Тариф:</strong>
+  <span id="tariff"></span>
+</p>
+
+<p>
+  <strong>Итого:</strong>
+  <span id="total_sum"></span>
+</p>
+
+<p>
+  <strong>С какого числа:</strong>
+  <%= @payment.start_date %>
+</p>
+
+<p>
+  <strong>По какое число:</strong>
+  <%= @payment.end_date %>
+</p>
+
+
+
+
+
+<%= link_to 'Edit', edit_user_payment_path(id: @payment.id, user_id: @payment.user.id) %> |
+<%= link_to 'Back', user_payments_path(id: @payment.id, user_id: @payment.user.id) %>
+
+<script language="JavaScript">
+    var s = new Object();
+    $('document').ready(
+            function ()
+            {
+                $.ajax(
+                        {
+                            url: '/price'
+                        }
+                ).done(
+                        function (data) {
+                            console.log(data);
+                            s = data;
+                            var value = <%= @payment.amount %>;
+                            var sel_id = <%= @payment.paymenttype_id %>;
+                            var price = s[sel_id-1].price * value;
+                            $('#tariff').text(s[sel_id-1].price + " сум");
+                            $('#total_sum').text(price + " сум");
+                        }
+                );
+
+
+            }
+    );
+
+
+
+
+</script>

@@ -1,0 +1,27 @@
+<h1>Listing paymenttypes</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Typename</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paymenttypes.each do |paymenttype| %>
+      <tr>
+        <td><%= paymenttype.typename %></td>
+        <td><%= paymenttype.price %></td>
+        <td><%= link_to 'Show', paymenttype %></td>
+        <td><%= link_to 'Edit', edit_paymenttype_path(paymenttype) %></td>
+        <td><%= link_to 'Destroy', paymenttype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paymenttype', new_paymenttype_path %>

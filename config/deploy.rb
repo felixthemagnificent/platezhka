@@ -1,9 +1,9 @@
-set :application, 'my_app_name'
+set :application, 'platezhka'
 set :repo_url, 'git@example.com:me/my_repo.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-# set :deploy_to, '/var/www/my_app'
+ set :deploy_to, '/rails'
 # set :scm, :git
 
 # set :format, :pretty

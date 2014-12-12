@@ -1,0 +1,6 @@
+<h1>Editing payment</h1>
+
+<%= render 'edit_form' %>
+
+<%= link_to 'Show', user_payment_path(id: @payment.id, user_id: @payment.user.id) %> |
+<%= link_to 'Back', user_payments_path %>

@@ -1,0 +1,45 @@
+<%= bootstrap_form_for [current_user,@payment], url: user_payments_url do |f| %>
+      <%= f.select :paymenttype_id,@types, label: 'Payment type' %>
+      <%= f.date_select :start_date %>
+      <%= f.date_select :end_date %>
+      <%= f.number_field :amount %>
+
+    <%= f.static_control label: "Total" do %>
+        <span id="total_sum"></span>
+    <% end %>
+      <%= f.submit 'Edit payment' %>
+
+<% end %>
+
+<script language="JavaScript">
+  var s = new Object();
+ $('document').ready(
+ function ()
+ {
+     $.ajax(
+             {
+                 url: '/price'
+             }
+     ).done(
+             function (data) {
+                 console.log(data);
+                 s = data;
+
+                 var value = $('#payment_amount').val();
+                 var sel_id = $('#payment_paymenttype_id').val();
+                 var price = s[sel_id-1].price * value;
+                 $('#total_sum').text(price + " сум");
+
+             }
+     )
+ }
+ );
+ $('#payment_amount').change(function()
+ {
+     var value = $('#payment_amount').val();
+     var sel_id = $('#payment_paymenttype_id').val();
+     var price = s[sel_id-1].price * value;
+     $('#total_sum').text(price + " сум");
+
+ });
+</script>

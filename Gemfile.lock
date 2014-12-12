@@ -38,6 +38,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
+    bootstrap_form (2.2.0)
     builder (3.2.2)
     capistrano (3.0.1)
       i18n
@@ -110,6 +111,7 @@ GEM
     minitest (5.4.3)
     multi_json (1.10.1)
     mysql2 (0.3.17)
+    nested_form (0.3.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -223,6 +225,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap_form
   capistrano (~> 3.0.1)
   capistrano-bundler
   capistrano-rails (~> 1.1.0)
@@ -234,10 +237,12 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+  i18n
   jbuilder (~> 2.0)
   jquery-rails
   launchy
   mysql2
+  nested_form
   quiet_assets
   rails (= 4.1.7)
   rails_layout
