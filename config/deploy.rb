@@ -2,7 +2,7 @@ set :application, 'payservice'
 set :repo_url, 'git@github.com:felixthemagnificent/platezhka.git'
 
 set :branch, 'master'
-
+set :unicorn_user, "deploy"
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
  set :deploy_to, '/rails/railsapp/payservice'
