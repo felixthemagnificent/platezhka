@@ -2,8 +2,8 @@ set :application, 'platezhka'
 set :repo_url, 'git@github.com:felixthemagnificent/platezhka.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-
- set :deploy_to, '/rails/' + :application.to_s
+set :nginx_server_name, "plat.rtsystems.ru"
+set :deploy_to, '/rails/railsapp/platezhka'
 # set :scm, :git
 
 # set :format, :pretty

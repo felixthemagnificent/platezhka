@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 20141208122733) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "price",          limit: 24
+    t.float    "price"
     t.boolean  "processed"
   end
 
   create_table "paymenttypes", force: true do |t|
     t.string   "typename"
-    t.float    "price",      limit: 24
+    t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20141208122733) do
     t.boolean  "admin"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
