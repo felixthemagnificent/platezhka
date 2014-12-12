@@ -21,18 +21,18 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: platezhka_test
+  database: pl_test
   pool: 5
-  username: paybill
-  password: coolpass
+  username: pl
+  password: pl
   host: rtsystems.ru
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: platezhka_production
+  database: pl_production
   pool: 5
-  username: paybill
-  password: coolpass
+  username: pl
+  password: pl
   host: rtsystems.ru
