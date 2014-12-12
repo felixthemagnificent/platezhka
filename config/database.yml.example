@@ -25,7 +25,7 @@ test:
   pool: 5
   username: pl
   password: pl
-  host: rtsystems.ru
+  host: localhost
 
 production:
   adapter: mysql2
@@ -35,4 +35,4 @@ production:
   pool: 5
   username: pl
   password: pl
-  host: rtsystems.ru
+  host: localhost
